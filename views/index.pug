@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 #{title}
+    ul.list-group
+      each n in news
+        li.list-group-item
+        a(href='/articles/'+n._id)= n.body
+
+
