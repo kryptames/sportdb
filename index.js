@@ -64,13 +64,50 @@ app.post('/news/add', function (req, res) {
 })
 
 //Get Single Article
-app.get('/articles/:id', function(req,res){
+app.get('/article/:id', function(req,res){
   Article.findById(req.params.id,function(err,data){
     res.render('article', {
       data:data
     })
   });
 });
+
+//Edit
+app.get('/article/edit/:id', function(req,res){
+  Article.findById(req.params.id,function(err,data){
+    res.render('edit_article', {
+      title: 'Edit Article',
+      data:data
+    })
+  });
+});
+
+//Update
+app.post('/article/edit/:id', function (req, res) {
+  let article = {};
+  article.title = req.body.title
+  article.body = req.body.body
+
+  let query = {_id:req.params.id}
+
+  Article.update(query,article,function(err){
+    if(err){
+      console.log(err)
+    }else{
+      res.redirect('/')
+    }
+  })
+})
+
+app.delete('/article/:id', function(req,res){
+  let query = {_id:req.params.id}
+  Article.remove(query,function(err){
+    if(err){
+      console.log(err)
+    }
+    res.send('Success')
+  })
+})
 
 app.post('/', function (req, res) {
   res.send('you sent a post request.')

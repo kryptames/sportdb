@@ -3,3 +3,6 @@ extends layout
 block content
     h1= data.title
     p= data.body
+    hr
+    a.btn.btn-default(href='/article/edit/'+data._id) Edit
+    a.btn.btn-danger.delete-article(href='#',data-id=data._id) Delete
