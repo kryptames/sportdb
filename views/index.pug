@@ -3,8 +3,8 @@ extends layout
 block content
     h1 #{title}
     ul.list-group
-      each n in news
+      each n in articles
         li.list-group-item
-        a(href='/article/'+n._id)= n.body
+          a(href='/articles/'+n._id)= n.title
 
 
