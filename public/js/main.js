@@ -1,12 +1,12 @@
 $(document).ready(function(){
-    $('.delete-article').on('click', function(e){
+    $('.delete-medal').on('click', function(e){
         $target = $(e.target);
         const id = $target.attr('data-id');
         $.ajax({
             type: 'DELETE',
-            url: '/articles/'+id,
+            url: '/medals/'+id,
             success: function(response){
-                alert('Deleting Article');
+                alert('Deleting Medal');
                 window.location.href='/';
             },
             error: function(err){

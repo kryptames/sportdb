@@ -3,8 +3,8 @@ extends layout
 block content
     h1 #{title}
     ul.list-group
-      each n in articles
+      each n in medals
         li.list-group-item
-          a(href='/articles/'+n._id)= n.title
+          a(href='/medals/'+n._id)= n.name
 
 

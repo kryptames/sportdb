@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    div#name
+        h1 #{medal.name} 
+            if medal.sex == 'Female'
+                span
+                    img(alt="logo" src='/img/female-icon.png') 
+            if medal.sex == 'Male'
+                span
+                    img(alt="logo" src='/img/male-icon.png') 
+    h5 #{medal.location}, #{medal.year}
+    h5= medal.sport
+    p Written by #{note}
+    hr
+    if user
+        if user.id == medal.note
+            a.btn.btn-default(href='/medals/edit/'+medal._id) Edit
+            a.btn.btn-danger.delete-medal(href='#',data-id=medal._id) Delete

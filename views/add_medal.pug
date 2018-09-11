@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/medals/add/')
+    #form-group
+      label Name:
+      input.form-control(name='name', type='text')
+    #form-group
+      label Sex:
+      input.form-control(name='sex', type='text')
+    #form-group
+      label Year:
+      input.form-control(name='year', type='text')
+    #form-group
+      label Location:
+      input.form-control(name='location', type='text')
+    #form-group
+      label Game:
+      input.form-control(name='sport', type='text')
+    br
+    input.btn.btn-primary(type='submit',value='Submit')

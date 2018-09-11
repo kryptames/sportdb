@@ -80,23 +80,23 @@ app.get('*', function(req,res,next){
 
 
 //Bring in Models
-const Article = require('./models/articleSchema');
+const Medal = require('./models/medalSchema');
 
 //Route
 app.get('/', function (req, res) {
-  Article.find({}, function(err, data){
+  Medal.find({}, function(err, data){
     if(err){
       console.log(err);
     }else{
-      res.render('index', {title:'Home', articles: data});
+      res.render('index', {title:'Home', medals: data});
     }
   });
 });
 
 //Route Files
-let articles = require('./routes/articles');
+let medals = require('./routes/medals');
 let users = require('./routes/users');
-app.use('/articles',articles);
+app.use('/medals',medals);
 app.use('/users',users);
 
 app.post('/', function (req, res) {

@@ -9,3 +9,35 @@
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
+
+.navbar-inverse{
+    background-color: rgb(182, 85, 202);
+    border:   rgb(150, 25, 175);
+}
+
+.navbar-inverse .navbar-brand{
+    color: white;
+}
+
+.navbar-inverse .navbar-brand:hover{
+    color: rgb(81, 0, 83);
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: rgb(81, 0, 83);
+}
+
+span img{
+    width: 40px;
+    height: 40px;
+    display: inline;
+}
+
+.navbar-right > li > p{
+    color: white;
+    padding-top: 15px;
+}
